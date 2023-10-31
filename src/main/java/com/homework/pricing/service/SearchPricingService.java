@@ -17,8 +17,6 @@ public class SearchPricingService {
                         searchRequest.brandId(),
                         searchRequest.productId(),
                         searchRequest.applicationDate())
-                .log()
-                .doOnNext(System.out::println)
                 .map(pricingEntity -> new Pricing(
                         pricingEntity.getBrandId(),
                         pricingEntity.getProductId(),

@@ -17,7 +17,7 @@ public interface PricingRepository extends ReactiveCrudRepository<PricingReposit
             "p.brand_id = :brandId and p.product_id = :productId " +
             "and p.start_date_range < :applicationDate " +
             "and p.end_date_range > :applicationDate " +
-            "order by priority asc limit 1")
+            "order by priority desc limit 1")
     Mono<PricingEntity> findCorrespondingPriceRangeWithMostPriority(long brandId,
                                                                     long productId,
                                                                     Instant applicationDate);
